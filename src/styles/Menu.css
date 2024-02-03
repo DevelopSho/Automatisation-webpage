@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.position {
+    display: flex;
+    position: absolute;
+    top:0.1rem;
+    right: 32rem;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-family: play;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+li {
+    padding-left: 1rem;
+}
+
+@font-face {
+    font-family: play;
+    src: url('../Fonts/play.ttf')
+  }
+
+.decoration {
+    text-decoration: none;
+    color: rgb(3, 3, 102);
+}
+
+.decoration:hover {
+    color: rgb(61, 3, 3)
+}

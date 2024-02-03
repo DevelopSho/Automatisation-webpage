@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    background-color: rgb(222, 235, 227);
+}
+
+.conteiner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7rem auto;
+    width: 50rem;
+    height: auto;
+    font-family: play;
+    
+}
+
+.name {
+    display: flex;
+    justify-content: left;
+    resize: none;
+    margin: 0 auto;
+}
+
+.description {
+    margin-top: 1rem;
+}
+
+.send {
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    font-family: play;
+}
+
+.date {
+    margin-bottom: 1rem;
+    width: 13rem;
+}
+
+@font-face {
+    font-family: play;
+    src: url('../Fonts/play.ttf')
+  }
+
+
+  .edit-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .edit-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 9em;
+    width: 50.9em;
+    margin-bottom: 10px;
+  }

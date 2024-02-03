@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+@font-face {
+    font-family: play;
+    src: url('../Fonts/play.ttf')
+}
+
+
+.container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    height: auto;
+    padding: 1rem;
+    border-radius: 3cap;
+    
+}
+
+.top {
+    height: auto;
+    width: 50rem;
+    border-top: 1px solid rgb(0, 0, 0);
+}
+
+.upravaTextu {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 0.4rem;
+    font-family: play;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.8rem;
+}
+
+.hover:hover {
+    color: rgb(49, 1, 1);
+}
+
+button {
+    border: none;
+    background-color: rgb(222, 235, 227);
+    padding-left: 1.3rem;
+    color:rgb(37, 10, 73);
+}
