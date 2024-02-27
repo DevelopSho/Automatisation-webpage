@@ -1,0 +1,95 @@
+/* Postavy.css */
+
+/* Společné styly */
+.text-weight {
+    font-weight: bold;
+}
+
+.change-input {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+/* Vzhled pro vytváření postavy */
+.vytvoreni-postavy {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Vzhled pro seznam postav */
+.my-character {
+    margin-top: 20px;
+}
+
+.character-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.character-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.character-image img {
+    max-width: 100%;
+    max-height: 150px; /* Sníženo z 200px na 150px */
+    height: auto;
+    border-radius: 8px;
+}
+
+.character-info {
+    flex-grow: 1;
+    text-align: center; /* Zarovnání textu na střed */
+}
+
+.character-info p {
+    margin: 5px 0;
+}
+
+.character-actions {
+    margin-top: 10px;
+}
+
+/* Formulářové styly */
+.character-form {
+    max-width: 600px; /* Sníženo na 600px pro lepší čitelnost na větších obrazovkách */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding-top: 1rem;
+}
+
+.character-image-form img {
+    max-width: 100%;
+    max-height: 100px; /* Sníženo na 100px pro lepší čitelnost */
+    border-radius: 8px;
+}
+
+.table-container {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+/* Styl pro zarovnání obsahu tabulky na střed */
+.table-container table {
+    margin: auto;
+}
+
+.table-container th,
+.table-container td {
+    padding: 8px;
+    text-align: center;
+}
