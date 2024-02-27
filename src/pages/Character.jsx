@@ -295,7 +295,7 @@ const Character = () => {
                   >
                     Smazat
                   </Button>
-                  <Link to={`/character/${character.id}`} className="btn btn-info ml-2">
+                  <Link to={`/character/${character.id}`} className="btn btn-success ml-2">
                     Více informací
                   </Link>
                 </td>
