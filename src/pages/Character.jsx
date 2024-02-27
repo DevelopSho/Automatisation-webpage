@@ -255,7 +255,7 @@ const Character = () => {
   <h2 className="my-character">Charaktery postav</h2>
   <div className="firebase-data">
     {characterData && characterData.length > 0 ? (
-      <div className="table-container"> {/* Nový div pro obalení tabulky */}
+      <div className="table-container"> 
         <Table striped bordered hover>
           <thead>
             <tr>

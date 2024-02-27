@@ -20,6 +20,7 @@
 /* Vzhled pro seznam postav */
 .my-character {
     margin-top: 20px;
+    font-family: play; /* Added font-family here */
 }
 
 .character-list {
@@ -48,6 +49,7 @@
 .character-info {
     flex-grow: 1;
     text-align: center; /* Zarovnání textu na střed */
+    font-family: play; /* Added font-family here */
 }
 
 .character-info p {
@@ -68,6 +70,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding-top: 1rem;
+    font-family: play; /* Added font-family here */
 }
 
 .character-image-form img {
@@ -106,4 +109,18 @@
     border-radius: 8px;
     width: auto;
     height: auto;
+}
+
+.my-character {
+    display: flex;
+    justify-content: space-between; /* nebo jiné vhodné nastavení pro pozici */
+    align-items: center; /* nebo jiné vhodné nastavení pro pozici */
+    margin-top: 20px;
+    margin-left: 12rem;
+    font-family: play;
+}
+
+@font-face {
+    font-family: play;
+    src: url('../Fonts/play.ttf')
 }
