@@ -124,3 +124,7 @@
     font-family: play;
     src: url('../Fonts/play.ttf')
 }
+
+.text-align {
+    margin-left: 12rem;
+}

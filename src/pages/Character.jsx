@@ -305,7 +305,7 @@ const Character = () => {
         </Table>
       </div>
     ) : (
-      <p>Žádné dostupné postavy</p>
+      <p className="text-align">Žádné dostupné postavy</p>
     )}
   </div>
 </div>

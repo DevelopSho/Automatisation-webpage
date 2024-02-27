@@ -6,9 +6,10 @@
 
 .position {
     display: flex;
-    position: absolute;
-    top:0.1rem;
-    right: 32rem;
+    flex-direction: column;
+    position: absolute; /* Added absolute position */
+    top: 10rem;
+    left: 10rem;
     text-transform: uppercase;
     list-style-type: none;
     font-family: play;
@@ -23,7 +24,7 @@ li {
 @font-face {
     font-family: play;
     src: url('../Fonts/play.ttf')
-  }
+}
 
 .decoration {
     text-decoration: none;
@@ -31,5 +32,5 @@ li {
 }
 
 .decoration:hover {
-    color: rgb(61, 3, 3)
+    color: rgb(61, 3, 3);
 }
