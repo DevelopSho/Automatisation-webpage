@@ -7,6 +7,7 @@ import Character from '../pages/Character';
 import Pictures from '../pages/Pictures';
 import CharacterForm from '../components/CharacterForm';
 import CharacterDetail from '../pages/CharacterDetail';
+import CharacterEdit from '../components/CharacterEdit';
 
 const App = () => {
   
@@ -20,6 +21,8 @@ const App = () => {
         <Route path="/pictures" element={<Pictures />} />
         <Route path="/characterform" element={<CharacterForm />} />
         <Route path="/character/:id" element={<CharacterDetail />} />
+        <Route path="/edit/:id" element={<CharacterEdit />} />
+        
       </Routes>
     </BrowserRouter>
   );

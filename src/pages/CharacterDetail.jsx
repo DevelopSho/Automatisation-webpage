@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import firebase from 'firebase/app';
+import 'firebase/storage';
+import "../styles/CharacterDetail.css";
 
 const CharacterDetail = () => {
   const { id } = useParams();
@@ -52,28 +54,34 @@ const CharacterDetail = () => {
   }
 
   return (
-    <div>
-      <h2>Detail postavy</h2>
-      <p>Jméno: {characterData.name}</p>
-      <p>Příjmení: {characterData.surname}</p>
-      <p>Datum narození: {characterData.birthday}</p>
-      <p>Místo bydliště: {characterData.city}</p>
-      <p>Pohlaví: {characterData.gender}</p>
-      <p>Národnost: {characterData.nationality}</p>
-
-      {/* Přidáno pole pro lore postavy */}
-      <p>Lore:</p><div dangerouslySetInnerHTML={{ __html: characterData.description }}></div>
-
-      {/* Zobrazíme obrázek pouze pokud máme URL */}
-      {characterData.imageUrl && (
-        <div>
-          <p>Obrázek:</p>
-          <img src={characterData.imageUrl} alt="Postava" style={{ maxWidth: '150px' }} />
+    <>
+    <Link to={`/character/`} className="btn btn-primary">Zpět</Link>
+      <div className="character-detail-container">
+        <h2 className="detail-heading">Detail postavy</h2>
+        
+        <div className="character-image-container">
+          {characterData.imageUrl && (
+            <img src={characterData.imageUrl} alt="Postava" className="character-image" />
+          )}
         </div>
-      )}
+    
+        <div className="character-info">
+          <div className="character-content">
+            <p><strong>Jméno:</strong> {characterData.name}</p>
+            <p><strong>Příjmení:</strong> {characterData.surname}</p>
+            <p><strong>Datum narození:</strong> {characterData.birthday}</p>
+            <p><strong>Místo bydliště:</strong> {characterData.city}</p>
+            <p><strong>Pohlaví:</strong> {characterData.gender}</p>
+            <p><strong>Národnost:</strong> {characterData.nationality}</p>
+          </div>
+          
+          <p className="character-lore">Lore:</p>
+          <div className="character-description" dangerouslySetInnerHTML={{ __html: characterData.description }}></div>
 
-      {/* Zde můžeš přidat další informace podle potřeby */}
-    </div>
+          <Link to={`/edit/${id}`} className="edit-button">Editovat postavu</Link>
+        </div>
+      </div>
+    </>
   );
 };
 

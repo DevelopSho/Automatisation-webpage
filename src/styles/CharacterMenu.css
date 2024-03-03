@@ -79,7 +79,7 @@ h1 {
 .text-area-input {
     resize: none;
     width: 100rem;
-    height: 15rem;
+    height: auto;
     position: absolute;
     left: 35rem;
     top: 2rem;
@@ -93,8 +93,8 @@ h1 {
 .position-editor {
   background-color: white;
   position: absolute;
-  width: 75rem;
-  height: 30rem;
-  top: 1rem;
-  left: 35rem;
+  width: 70rem;
+  max-height: auto;
+  top: 2rem;
+  left: 30rem;
 }
