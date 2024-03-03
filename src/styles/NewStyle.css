@@ -1,0 +1,52 @@
+.vytvoreni-postavy {
+  max-width: 800px; /* Zvětšte maximální šířku pro umístění karet vedle sebe */
+  margin: 0 auto;
+}
+
+.character-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Přidán flex-wrap pro zobrazení karet vedle sebe a na další řádek */
+  max-width: 800px; /* Zvětšte maximální šířku karet */
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #DEEBE3;
+  margin: 0 5px 10px; /* Přidán margin pro prostor mezi kartami */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-character {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.bigger {
+  font-size: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}

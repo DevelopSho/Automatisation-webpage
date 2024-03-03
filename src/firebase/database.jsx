@@ -14,8 +14,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const projectFirestore = firebase.firestore();
-const userId = '10217740565665081'; // Tvoje ID
-const redirectPage = '/Newsletter'; // Uprav na skutečnou cílovou 
+const userId = '10217740565665081'; 
+const redirectPage = '/Newsletter'; 
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
