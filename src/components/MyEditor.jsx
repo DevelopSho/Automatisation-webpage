@@ -12,13 +12,24 @@ const MyEditor = ({ onEditorChange }) => {
     onEditorChange(content); // Předáváme obsah editoru do nadřazené komponenty
   };
 
+  const handleFormSubmit = () => {
+    // Přidáte zde kód pro odeslání obsahu editoru (případně do Firebase nebo jiného úložiště)
+
+    // Resetování obsahu editoru po odeslání
+    setEditorContent('');
+  };
+
   return (
-    <ReactQuill
-      theme="snow"
-      value={editorContent}
-      onChange={handleChange}
-      className="position-editor"
-    />
+    <div>
+      <ReactQuill
+        theme="snow"
+        value={editorContent}
+        onChange={handleChange}
+        className="position-editor"
+      />
+
+      {/* Tlačítko pro odeslání formuláře */}
+    </div>
   );
 };
 
