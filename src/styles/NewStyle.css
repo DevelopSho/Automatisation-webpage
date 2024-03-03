@@ -50,3 +50,7 @@
   align-items: center;
   margin: 0 auto;
 }
+
+.bigger:hover {
+  color: #450303;
+}

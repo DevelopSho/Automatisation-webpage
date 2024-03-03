@@ -1,14 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box; /* Corrected box-sizing property value */
 }
 
 @font-face {
     font-family: play;
-    src: url('../Fonts/play.ttf')
+    src: url('../Fonts/play.ttf');
 }
-
 
 .container-main {
     display: flex;
@@ -22,8 +21,7 @@
     width: 50rem;
     height: auto;
     padding: 1rem;
-    border-radius: 3cap;
-    
+    border-radius: 3px; /* Corrected border-radius property value */
 }
 
 .top {
@@ -39,7 +37,7 @@
     font-family: play;
 }
 
-.icons {
+.icons-signin {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -53,6 +51,7 @@
 button {
     border: none;
     background-color: rgb(222, 235, 227);
-    padding-left: 1.3rem;
-    color:rgb(37, 10, 73);
+    padding: 0.8rem 1.3rem; /* Adjusted padding */
+    color: rgb(37, 10, 73);
 }
+

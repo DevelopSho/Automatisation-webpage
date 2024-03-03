@@ -12,7 +12,7 @@ const Signin = () => {
     
     <div className="container-main">
       <p className="upravaTextu">Pro vstup je nutné se nejdříve přihlásit!</p>
-      <div className="icons">
+      <div className="icons-signin">
       <button onClick={handleFacebookLogin}> 
   <FaFacebook className="hover" />
 </button>

@@ -54,6 +54,7 @@ const Character = () => {
         <LogoutButton />
       </div>
       <Menu />
+      
       <Link to="/CharacterForm" className="bigger">
   <MdOutlinePersonAddAlt1 /> 
 </Link>
