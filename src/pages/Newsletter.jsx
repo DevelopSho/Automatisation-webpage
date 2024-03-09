@@ -118,7 +118,7 @@ const Newsletter = () => {
       <div className="tlacitko">
         <LogoutButton />
       </div>
-
+        <h1>Novinky</h1>
       <div className="conteiner-body">
         <div className="conteiner">
           <Form onSubmit={submitForm}>

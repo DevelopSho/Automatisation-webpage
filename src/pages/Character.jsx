@@ -54,13 +54,13 @@ const Character = () => {
         <LogoutButton />
       </div>
       <Menu />
-      
+      <h2 className="my-character">Charaktery postav</h2>
       <Link to="/CharacterForm" className="bigger">
   <MdOutlinePersonAddAlt1 /> 
 </Link>
 
       <div className="seznam-postav">
-        <h2 className="my-character">Charaktery postav</h2>
+       
         <div className="firebase-data">
           {characterData && characterData.length > 0 ? (
             <div className="card-container"> 

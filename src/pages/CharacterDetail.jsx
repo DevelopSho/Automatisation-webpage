@@ -55,7 +55,7 @@ const CharacterDetail = () => {
 
   return (
     <>
-    <Link to={`/character/`} className="btn btn-primary">Zpět</Link>
+    <Link to={`/character/`} className="btn btn-primary back-button">Zpět</Link>
       <div className="character-detail-container">
         <h2 className="detail-heading">Detail postavy</h2>
         

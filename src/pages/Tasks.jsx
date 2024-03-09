@@ -1,5 +1,6 @@
 import Menu from "../components/Menu";
 import LogoutButton from "../components/SignOut";
+import TaskForm from "../components/Tasks";
 
 
 
@@ -8,8 +9,10 @@ const Tasks = () => {
     <>
       <div className="tlacitko">
         <LogoutButton />
+      
       </div>
       <Menu />
+      <TaskForm />
   
     </>
   );

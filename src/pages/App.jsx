@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Entry from '../pages/Entry';
 import Newsletter from '../pages/Newsletter';
 import Tasks from '../pages/Tasks';
@@ -8,6 +8,8 @@ import Pictures from '../pages/Pictures';
 import CharacterForm from '../components/CharacterForm';
 import CharacterDetail from '../pages/CharacterDetail';
 import CharacterEdit from '../components/CharacterEdit';
+
+
 
 const App = () => {
   

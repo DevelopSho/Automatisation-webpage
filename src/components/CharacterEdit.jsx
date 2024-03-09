@@ -4,6 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { Form, Button, Alert } from 'react-bootstrap';
 import MyEditor from './MyEditor';
+import "../styles/CharacterEdit.css"
 
 const CharacterEdit = () => {
   const { id } = useParams();
@@ -16,7 +17,6 @@ const CharacterEdit = () => {
     gender: '',
     nationality: '',
     description: '',
- 
   });
   const [successMessage, setSuccessMessage] = useState('');
 
@@ -28,11 +28,7 @@ const CharacterEdit = () => {
 
         if (doc.exists) {
           const character = doc.data();
-
-          // Nastavení původních dat do state
           setCharacterData(character);
-
-          // Nastavení dat do formuláře
           setFormData({
             name: character.name,
             surname: character.surname,
@@ -41,7 +37,6 @@ const CharacterEdit = () => {
             gender: character.gender,
             nationality: character.nationality,
             description: character.description,
-           
           });
         } else {
           console.log('Dokument nenalezen.');
@@ -61,14 +56,18 @@ const CharacterEdit = () => {
     });
   };
 
+  const handleEditorChange = (content) => {
+    setFormData({
+      ...formData,
+      description: content,
+    });
+  };
+
   const handleEditSubmit = async (e) => {
     e.preventDefault();
 
-    // Zde můžete provést aktualizaci dat v databázi
     try {
       const charactersRef = firebase.firestore().collection('characters');
-
-      // Aktualizace dat postavy
       await charactersRef.doc(id).update({
         name: formData.name,
         surname: formData.surname,
@@ -77,13 +76,11 @@ const CharacterEdit = () => {
         gender: formData.gender,
         nationality: formData.nationality,
         description: formData.description,
-        // Odstraněno pole pro obrázek
-        // Další pole podle potřeby
       });
 
       console.log('Postava byla úspěšně aktualizována.');
       setSuccessMessage('Postava byla úspěšně aktualizována.');
-      // Přidáno zpoždění a poté přesměrování na stránku s detailem postavy
+
       setTimeout(() => {
         window.location.href = `/character/${id}`;
       }, 200);
@@ -96,8 +93,6 @@ const CharacterEdit = () => {
     <div className="character-edit-container">
       <h2 className="edit-heading">Editace postavy</h2>
       <Form onSubmit={handleEditSubmit}>
-        {/* Odstraněné pole pro obrázek */}
-        
         <Form.Group controlId="formName">
           <Form.Label className="text-weight">Jméno:</Form.Label>
           <Form.Control
@@ -164,20 +159,19 @@ const CharacterEdit = () => {
           />
         </Form.Group>
 
-        <MyEditor />
+        <MyEditor initialContent={formData.description} onEditorChange={handleEditorChange} />
         
         <Button variant="primary" type="submit" className="create-character">
           Uložit změny
         </Button>
 
-        {/* Zobrazení úspěšného oznámení */}
         {successMessage && (
           <Alert variant="success" className="success-message">
             {successMessage}
           </Alert>
         )}
       </Form>
-      {/* Přidáno tlačítko pro návrat na detail postavy */}
+
       <Link to={`/character/${id}`} className="back-to-detail">
         Zpět na detail postavy
       </Link>

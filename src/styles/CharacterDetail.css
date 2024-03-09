@@ -18,6 +18,8 @@
   flex-direction: column;
   align-items: left;
   text-align: justify;
+  line-height: 1 !important;
+  margin-bottom: 0 !important;
 }
 
 .character-content {
@@ -28,17 +30,17 @@
 }
 
 .character-lore {
-  margin-top: 8px;
   text-transform: uppercase;
   font-weight: bold;
   color: #000000;
 }
 
 .character-description {
-  margin-top: 8px;
+  line-height: 1 !important;
+  margin-bottom: 0 !important;
   color: #000000;
   width: 45rem;
-  overflow-y: auto; /* Přidáno zobrazení s posuvníkem při přesahujícím obsahu */
+
 }
 
 .character-image-container {
@@ -46,11 +48,44 @@
 }
 
 .character-image {
-  max-width: 30%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+  max-width: 25%;
+  border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 8px auto;
+}
+
+.character-description {
+  line-height: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+.edit-button {
+  display: inline-block;
+  padding: 10px 15px;
+  max-width: 10rem;
+  text-align: center;
+  background-color: #054321;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+  background-color: #710404;
+}
+
+.back-button {
+  /* Tvé vlastní styly zde */
+  /* Například: */
+  padding: 10px 15px;
+  background-color: #211374;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #555;
 }

@@ -1,37 +1,39 @@
-* {
+.menu {
+    background-color: #333; /* Barva pozadí menu */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Stín pod menu */
+    padding: 0 1px; /* Odsazení vnitřního obsahu */
+  }
+  
+  .position {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+    height: 60px; /* Výška menu */
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
-}
-
-.position {
-    display: flex;
-    flex-direction: column;
-    position: absolute; /* Added absolute position */
-    top: 10rem;
-    left: 10rem;
-    text-transform: uppercase;
-    list-style-type: none;
-    font-family: play;
-    font-weight: 900;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-}
-
-li {
-    padding-left: 1rem;
-}
-
-@font-face {
-    font-family: play;
-    src: url('../Fonts/play.ttf')
-}
-
-.decoration {
+  }
+  
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
     text-decoration: none;
-    color: rgb(3, 3, 102);
-}
-
-.decoration:hover {
-    color: rgb(61, 3, 3);
-}
+    color: #fff; /* Barva textu odkazu */
+    font-size: 1.2rem; /* Velikost písma odkazu */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out; /* Animace změny barvy textu */
+  }
+  
+  a:hover {
+    color: #ff7f50; /* Barva textu při najetí myši */
+  }
+  
+  /* Styl pro aktuální stránku */
+  a.active {
+    color: #ff7f50;
+    border-bottom: 2px solid #ff7f50; /* Spodní linka pro označení aktuální stránky */
+  }

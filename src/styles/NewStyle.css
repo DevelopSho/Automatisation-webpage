@@ -44,6 +44,7 @@
 }
 
 .bigger {
+  color: rgb(45, 31, 101);
   font-size: 7rem;
   display: flex;
   justify-content: center;
