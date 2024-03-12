@@ -4,7 +4,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { Form, Button, Alert } from 'react-bootstrap';
 import MyEditor from './MyEditor';
-import "../styles/CharacterEdit.css"
+import "../styles/CharacterEdit.css";
 
 const CharacterEdit = () => {
   const { id } = useParams();
@@ -92,11 +92,11 @@ const CharacterEdit = () => {
   return (
     <div className="character-edit-container">
       <h2 className="edit-heading">Editace postavy</h2>
-      <Form onSubmit={handleEditSubmit}>
+      <Form onSubmit={handleEditSubmit} className="edit-form-group">
         <Form.Group controlId="formName">
           <Form.Label className="text-weight">Jméno:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="custom-input"
             type="text"
             name="name"
             value={formData.name}
@@ -107,7 +107,7 @@ const CharacterEdit = () => {
         <Form.Group controlId="formSurname">
           <Form.Label className="text-weight">Příjmení:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="custom-input"
             type="text"
             name="surname"
             value={formData.surname}
@@ -118,7 +118,7 @@ const CharacterEdit = () => {
         <Form.Group controlId="formBirthday">
           <Form.Label className="text-weight">Datum narození:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="custom-input"
             type="text"
             name="birthday"
             value={formData.birthday}
@@ -129,7 +129,7 @@ const CharacterEdit = () => {
         <Form.Group controlId="formCity">
           <Form.Label className="text-weight">Místo bydliště:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="custom-input"
             type="text"
             name="city"
             value={formData.city}
@@ -140,7 +140,7 @@ const CharacterEdit = () => {
         <Form.Group controlId="formGender">
           <Form.Label className="text-weight">Pohlaví:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="custom-input"
             type="text"
             name="gender"
             value={formData.gender}
@@ -151,7 +151,7 @@ const CharacterEdit = () => {
         <Form.Group controlId="formNationality">
           <Form.Label className="text-weight">Národnost:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="custom-input"
             type="text"
             name="nationality"
             value={formData.nationality}

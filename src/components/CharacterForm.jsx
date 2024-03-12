@@ -4,8 +4,8 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/storage';
 import { Link } from 'react-router-dom';
-import "../styles/CharacterMenu.css";
 import MyEditor from './MyEditor';
+import "../styles/CharacterForm.css";
 
 const CharacterForm = ({ onFormSubmit }) => {
   const [formData, setFormData] = useState({
@@ -21,25 +21,40 @@ const CharacterForm = ({ onFormSubmit }) => {
 
   const [editorContent, setEditorContent] = useState('');
   const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData(prevData => ({
+      ...prevData,
       [name]: value,
-    });
+    }));
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setFormData({
-      ...formData,
+    setFormData(prevData => ({
+      ...prevData,
       image: file,
-    });
+    }));
   };
 
   const handleEditorChange = (content) => {
     setEditorContent(content);
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: '',
+      surname: '',
+      birthday: '',
+      city: '',
+      gender: '',
+      nationality: '',
+      description: '',
+      image: null,
+    });
+    setEditorContent('');
   };
 
   const handleSubmit = async (e) => {
@@ -51,10 +66,14 @@ const CharacterForm = ({ onFormSubmit }) => {
 
       const { name, surname, birthday, city, gender, nationality, image } = formData;
 
-      if (image) {
-        const imageRef = storageRef.child(`images/${image.name}`);
-        await imageRef.put(image);
+      if (!image) {
+        // Zobrazit chybovou zprávu, pokud není vybrán soubor obrázku
+        setErrorMessage('Nebyl vybrán žádný soubor!');
+        return;
       }
+
+      const imageRef = storageRef.child(`images/${image.name}`);
+      await imageRef.put(image);
 
       const characterDocRef = await charactersRef.add({
         name,
@@ -66,25 +85,13 @@ const CharacterForm = ({ onFormSubmit }) => {
         description: editorContent,
       });
 
-      const imageUrl = image ? `images/${image.name}` : null;
-      if (imageUrl) {
-        await characterDocRef.update({ imageUrl });
-      }
+      const imageUrl = `images/${image.name}`;
+      await characterDocRef.update({ imageUrl });
 
-      setFormData({
-        name: '',
-        surname: '',
-        birthday: '',
-        city: '',
-        gender: '',
-        nationality: '',
-        description: '',
-        image: null,
-      });
-
-      setEditorContent('');
+      resetForm();
 
       setSuccessMessage('Data byla úspěšně uložena do databáze.');
+      setErrorMessage(null);
 
       onFormSubmit();
       console.log('Data byla úspěšně uložena do databáze.');
@@ -96,16 +103,16 @@ const CharacterForm = ({ onFormSubmit }) => {
   return (
     <>
       <Link to="/character">
-        <button className='back-button'>Zpět na seznam postav</button>
+        <button className='back-button-second'>Zpět na seznam postav</button>
       </Link>
 
-      <h1>Zde si můžeš vytvořit svoji postavu: </h1>
+      <h1 className="change-position">Zde si můžeš vytvořit svoji postavu: </h1>
 
-      <Form className="character-form" onSubmit={handleSubmit}>
-        {/* Přidáno pole pro popis lore postavy */}
-        <Form.Group controlId="formImage">
+      <Form className="character-form-container" onSubmit={handleSubmit}>
+        <Form.Group controlId="formImage" className="form-group-custom">
           <Form.Label className="text-weight">Obrázek:</Form.Label>
           <Form.Control
+            className="input-field"
             type="file"
             name="image"
             accept="image/*"
@@ -113,10 +120,10 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formName">
+        <Form.Group controlId="formName" className="form-group-custom">
           <Form.Label className="text-weight">Jméno:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="input-field"
             type="text"
             name="name"
             value={formData.name}
@@ -124,10 +131,10 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formSurname">
+        <Form.Group controlId="formSurname" className="form-group-custom">
           <Form.Label className="text-weight">Příjmení:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="input-field"
             type="text"
             name="surname"
             value={formData.surname}
@@ -135,10 +142,10 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formBirthday">
+        <Form.Group controlId="formBirthday" className="form-group-custom">
           <Form.Label className="text-weight">Datum narození:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="input-field"
             type="text"
             name="birthday"
             value={formData.birthday}
@@ -146,10 +153,10 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formCity">
+        <Form.Group controlId="formCity" className="form-group-custom">
           <Form.Label className="text-weight">Místo bydliště:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="input-field"
             type="text"
             name="city"
             value={formData.city}
@@ -157,10 +164,10 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formGender">
+        <Form.Group controlId="formGender" className="form-group-custom">
           <Form.Label className="text-weight">Pohlaví:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="input-field"
             type="text"
             name="gender"
             value={formData.gender}
@@ -168,10 +175,10 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        <Form.Group controlId="formNationality">
+        <Form.Group controlId="formNationality" className="form-group-custom">
           <Form.Label className="text-weight">Národnost:</Form.Label>
           <Form.Control
-            className="change-input"
+            className="input-field"
             type="text"
             name="nationality"
             value={formData.nationality}
@@ -179,14 +186,18 @@ const CharacterForm = ({ onFormSubmit }) => {
           />
         </Form.Group>
 
-        {/* Přidáno pole pro popis lore postavy */}
-      
-          <MyEditor onEditorChange={handleEditorChange} className="position-editor" />
-        <Button variant="primary" type="submit" className="create-character">
+        <MyEditor onEditorChange={handleEditorChange} className="position-editor" />
+
+        <Button variant="primary" type="submit" className="submit-button">
           Vytvořit postavu
         </Button>
 
-        {/* Zobrazení úspěšného oznámení */}
+        {errorMessage && (
+          <Alert variant="danger" className="error-message">
+            {errorMessage}
+          </Alert>
+        )}
+
         {successMessage && (
           <Alert variant="success" className="success-message">
             {successMessage}

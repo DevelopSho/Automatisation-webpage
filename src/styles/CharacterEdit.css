@@ -1,63 +1,61 @@
 .character-edit-container {
-  max-width: 100rem;
-  margin: 2rem auto;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: #f0f0f0;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+} 
 
 .edit-heading {
-  font-size: 1.5em;
+  margin-top: 20px;
+  font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
 }
 
-.text-weight {
-  font-weight: bold;
+.edit-form-group {
+  margin-top: 20px;
 }
 
-.change-input {
-  width: 20rem;
-  padding: 8px;
-  margin-bottom: 15px;
+.custom-input {
+  width: 50%;
+  margin-bottom: 10px; /* Změna výšky */
+  padding: 8px; /* Změna výšky */
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .create-character {
-  margin-top: 20px;
+  background-color: #2ecc71;
+  color: #fff;
+  padding: 12px 16px; /* Změna výšky */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-character:hover {
+  background-color: #27ae60;
 }
 
 .success-message {
   margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
 }
 
 .back-to-detail {
   display: block;
   margin-top: 20px;
-  color: #007bff;
   text-decoration: none;
+  color: #333;
   font-weight: bold;
 }
 
 .back-to-detail:hover {
   text-decoration: underline;
-}
-
-.position-editor {
-  margin-top: 20px;
-}
-
-/* Editor Styling */
-.ql-container {
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-}
-
-.ql-editor {
-  min-height: 100px;
-  padding: 10px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: 1px solid #ced4da;
-  background-color: #fff;
 }

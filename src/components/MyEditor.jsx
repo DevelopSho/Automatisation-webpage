@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'react-quill/dist/quill.snow.css';
 import ReactQuill from 'react-quill';
-import "../styles/CharacterMenu.css";
+import "../styles/CharacterForm.css"
 
 const MyEditor = ({ onEditorChange, initialContent }) => {
   const [editorContent, setEditorContent] = useState('');

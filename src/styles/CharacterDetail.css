@@ -19,7 +19,7 @@
   align-items: left;
   text-align: justify;
   line-height: 1 !important;
-  margin-bottom: 0 !important;
+  margin-bottom: -3 !important;
 }
 
 .character-content {
@@ -48,7 +48,8 @@
 }
 
 .character-image {
-  max-width: 25%;
+  max-width: 60%;
+
   border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 8px auto;
@@ -76,8 +77,9 @@
 }
 
 .back-button {
-  /* Tvé vlastní styly zde */
-  /* Například: */
+  position: absolute;
+  top: 5rem;
+  right: 32rem;
   padding: 10px 15px;
   background-color: #211374;
   color: #fff;

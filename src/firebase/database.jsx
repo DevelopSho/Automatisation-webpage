@@ -3,12 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "YOUR-API-KEY",
-  authDomain: "YOUR-AUTH-DOMAIN",
-  projectId: "YOUR-PROJECT-ID",
-  storageBucket: "YOUR-STORAGE-BUCKET",
-  messagingSenderId: "YOUR-MESSAGING-SENDER-ID",
-  appId: "YOUR-APP-ID"
+  apiKey: "AIzaSyAMoHJZ4x_O69IorMH7qx3exGkJY8_hUs8",
+  authDomain: "newsletter---sho.firebaseapp.com",
+  projectId: "newsletter---sho",
+  storageBucket: "newsletter---sho.appspot.com",
+  messagingSenderId: "1038532280834",
+  appId: "1:1038532280834:web:ae9bc5dafd8e94100ddd1b"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -17,7 +17,7 @@ const projectFirestore = firebase.firestore();
 const redirectPage = '/Newsletter'; 
 const homePage = '/'; // Úvodní stránka, kam přesměrovat, pokud uživatel není povolen
 
-const allowedUserId = 'FOR-YOUR-ONLY';
+const allowedUserId = 'EDGEqxgbpcYN2nZh5piaWfBU0QE2';
 
 firebase.auth().onAuthStateChanged((user) => {
   // Pokud uživatel není přihlášen, přesměrovat na úvodní stránku
