@@ -35,13 +35,13 @@ const Tasks = () => {
   return (
     <div className="tasks-container">
       <h1>Seznam úkolů</h1>
-      <form onSubmit={handleSubmit} className="task-form">
+      <div className="task-form">
         <label>
           Task:
           <input type="text" value={task} onChange={(e) => setTask(e.target.value)} className="task-input" />
         </label>
-        <button type="submit" className="add-button">Přidat úkol</button>
-      </form>
+        <button onClick={handleSubmit} className="add-button">Přidat úkol</button>
+      </div>
 
       <table className="task-table">
         <thead>
@@ -51,14 +51,14 @@ const Tasks = () => {
           </tr>
         </thead>
         <tbody>
-          {tasksList.map((taskItem) => (
-            <tr key={taskItem.id} className="task-item">
-              <td>{taskItem.taskText}</td>
-              <td>
-                <button onClick={() => handleDelete(taskItem.id)} className="delete-button">Odstranit</button>
-              </td>
-            </tr>
-          ))}
+        {tasksList.map((taskItem) => (
+    <tr key={taskItem.id} className="task-item">
+        <td>{taskItem.taskText}</td>
+        <td>
+            <button onClick={() => handleDelete(taskItem.id)} className="delete-button-new">Odstranit</button>
+        </td>
+    </tr>
+))}
         </tbody>
       </table>
     </div>

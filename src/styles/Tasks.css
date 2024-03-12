@@ -69,9 +69,8 @@ h1 {
     background-color: #f5f5f5;
 }
   
-.delete-button {
-    padding: 8px 16px;
-    background-color: #3b225a;
+.delete-button-new {
+    background-color: #ff6b6b;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -79,10 +78,12 @@ h1 {
     text-transform: uppercase;
     margin-top: 8px;
     font-size: 14px;
+    padding: 10px 20px;
     transition: background-color 0.3s ease-in-out;
-}
-  
-.delete-button:hover {
-    background-color: #750101;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.delete-button-new:hover {
+    background-color: #500606;
+    color: #fff;
+}
