@@ -9,8 +9,6 @@ import CharacterForm from '../components/CharacterForm';
 import CharacterDetail from '../pages/CharacterDetail';
 import CharacterEdit from '../components/CharacterEdit';
 
-
-
 const App = () => {
   return (
     <BrowserRouter>
