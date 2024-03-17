@@ -12,7 +12,6 @@ import CharacterEdit from '../components/CharacterEdit';
 
 
 const App = () => {
-  
   return (
     <BrowserRouter>
       <Routes>
