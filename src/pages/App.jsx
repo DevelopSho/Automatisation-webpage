@@ -24,7 +24,6 @@ const App = () => {
         <Route path="/characterform" element={<CharacterForm />} />
         <Route path="/character/:id" element={<CharacterDetail />} />
         <Route path="/edit/:id" element={<CharacterEdit />} />
-        
       </Routes>
     </BrowserRouter>
   );
